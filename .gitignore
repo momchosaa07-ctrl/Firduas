@@ -1,7 +1,70 @@
+# ---------------------------------------------------------------------------
+# Secrets and credentials — NEVER commit these
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.crt
+*.cer
+credentials
+credentials.json
+secrets.json
+service-account*.json
+.netrc
+.npmrc
+.aws/
+.ssh/
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+bower_components/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state.gz
+
+# ---------------------------------------------------------------------------
+# Build output
+# ---------------------------------------------------------------------------
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+.cache/
+.parcel-cache/
+.turbo/
+coverage/
+
+# ---------------------------------------------------------------------------
+# Platform / tooling
+# ---------------------------------------------------------------------------
+.vercel
+.wrangler/
+.netlify
+
 # Local dev tooling (Claude Code preview server) — not needed to deploy
 .claude/
 
+# ---------------------------------------------------------------------------
 # OS / editor cruft
+# ---------------------------------------------------------------------------
 Thumbs.db
 ehthumbs.db
 Desktop.ini
@@ -15,6 +78,11 @@ $RECYCLE.BIN/
 .idea/
 .vscode/
 
+# ---------------------------------------------------------------------------
 # Logs
+# ---------------------------------------------------------------------------
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
