@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="bg" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Кетъринг Фирдаус — Обедно меню и кетъринг с безплатна доставка</title>
+<meta name="description" content="Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка. Разгледайте седмичното меню и основното меню, и поръчайте по телефона.">
+<meta name="theme-color" content="#0a0c09">
+<link rel="canonical" href="https://cateringfirdaus.bg/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.menu">
+<meta property="og:site_name" content="Кетъринг Фирдаус">
+<meta property="og:title" content="Кетъринг Фирдаус — Обедно меню и кетъринг с безплатна доставка">
+<meta property="og:description" content="Прясно приготвена храна за обяд и вечеря, с безплатна доставка. Поръчайте по телефона.">
+<meta property="og:image" content="https://cateringfirdaus.bg/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cateringfirdaus.bg/">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Кетъринг Фирдаус",
+  "alternateName": "Catering Firdaus",
+  "telephone": ["+359879333926", "+359878924996", "+359877335883"],
+  "servesCuisine": "Bulgarian",
+  "priceRange": "€1 - €6",
+  "url": "https://cateringfirdaus.bg/"
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skipLink">Към съдържанието</a>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Кетъринг Фирдаус">
+      <span class="brand-logo">
+        <img id="logo-img" class="brand-logo-img" src="assets/img/logo.png" alt="Кетъринг Фирдаус"
+             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+        <span id="logo-fallback" class="brand-logo-fallback">К</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Основна навигация">
+      <a href="#top" data-i18n="nav.home">Начало</a>
+      <a href="#about" data-i18n="nav.about">За нас</a>
+      <a href="#menu" data-i18n="nav.menu">Меню</a>
+      <a href="#weekly" data-i18n="nav.weekly">Седмично меню</a>
+      <a href="#contact" data-i18n="nav.contact">Контакти</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="lang-switcher">
+        <button class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-toggle-code" id="langToggleCode">BG</span>
+          <svg width="9" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="listbox">
+          <li role="option" data-lang="bg"><button type="button" data-lang-btn="bg"><span class="lang-code">BG</span><span>Български</span></button></li>
+          <li role="option" data-lang="en"><button type="button" data-lang-btn="en"><span class="lang-code">EN</span><span>English</span></button></li>
+          <li role="option" data-lang="tr"><button type="button" data-lang-btn="tr"><span class="lang-code">TR</span><span>Türkçe</span></button></li>
+          <li role="option" data-lang="ar"><button type="button" data-lang-btn="ar"><span class="lang-code">AR</span><span>العربية</span></button></li>
+        </ul>
+      </div>
+
+      <a class="btn btn-primary btn-nav-cta" href="tel:0879333926" data-i18n="nav.order">Поръчай сега</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="hero-media">
+      <img class="hero-media-img" src="assets/img/hero-food.jpg" alt="Прясно приготвена храна от Кетъринг Фирдаус"
+           loading="eager"
+           onerror="this.remove(); document.getElementById('heroPlaceholder').classList.add('show');">
+      <div class="media-placeholder hero-placeholder" id="heroPlaceholder"></div>
+      <div class="hero-scrim"></div>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-light" data-i18n="hero.eyebrow">Кетъринг Фирдаус</p>
+        <h1 data-i18n="hero.headline">Вкусната храна, която спасява деня ви</h1>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="tel:0879333926" data-i18n="hero.ctaPrimary">Поръчай сега</a>
+          <a class="btn btn-outline-light btn-lg" href="#menu" data-i18n="hero.ctaSecondary">Разгледай менюто</a>
+        </div>
+
+        <a class="hero-phone" id="heroPhoneLink" href="tel:0879333926">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2-9 0-15-6-15-15z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.phoneLabel">Обадете се за поръчка</span>
+          <strong id="heroPhoneNumber">0879 333 926</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FACTS STRIP ============================= -->
+  <section class="facts-strip">
+    <div class="container facts-strip-inner">
+      <span data-i18n="trustBar.delivery">Безплатна доставка</span>
+      <span data-i18n="trustBar.weeklyDeadline">Обедно меню — заявки до 11:00 ч.</span>
+      <span data-i18n="trustBar.mainDeadline">Основно меню — заявки до 14:00 ч.</span>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT ============================= -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <div class="about-media reveal">
+        <img src="assets/img/about.jpg" alt="Кетъринг Фирдаус — приготвяне на храна"
+             loading="lazy"
+             onerror="this.remove(); document.getElementById('aboutPlaceholder').classList.add('show');">
+        <div class="media-placeholder about-placeholder" id="aboutPlaceholder"></div>
+      </div>
+      <div class="about-copy reveal">
+        <p class="eyebrow" data-i18n="about.eyebrow">За нас</p>
+        <h2 data-i18n="about.heading">Готвим с грижа, доставяме с обич</h2>
+        <p data-i18n="about.body">Добре дошли при нас – мястото, където вкусната храна спасява деня ви. Ние сме вашата отмяна и помощ, когато нямате време, но искате нещо истински вкусно за обяд или вечеря. Бързо, топло и приготвено с грижа – точно както трябва.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= SHOWCASE ============================= -->
+  <section class="showcase reveal">
+    <img src="assets/img/showcase.jpg" alt="Прясно приготвени ястия"
+         loading="lazy"
+         onerror="this.remove(); document.getElementById('showcasePlaceholder').classList.add('show');">
+    <div class="media-placeholder showcase-placeholder" id="showcasePlaceholder"></div>
+    <div class="showcase-scrim"></div>
+    <p class="showcase-caption" data-i18n="trustBar.fresh">Приготвено прясно всеки ден</p>
+  </section>
+
+  <!-- ============================= WHY CHOOSE US ============================= -->
+  <section class="why">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow" data-i18n="why.eyebrow">Защо да изберете нас</p>
+        <h2 data-i18n="why.heading">Причини да поръчате от Фирдаус</h2>
+      </div>
+      <div class="why-grid reveal" id="whyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================= MAIN MENU ============================= -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow" data-i18n="menuSection.eyebrow">Основно меню</p>
+        <h2 data-i18n="menuSection.heading">Разгледайте менюто ни</h2>
+        <p class="section-sub" data-i18n="menuSection.subheading">Заявки за храна за вкъщи се приемат до 14:00 часа.</p>
+      </div>
+
+      <div class="menu-tabs" id="menuTabs" role="tablist"></div>
+
+      <div class="menu-photo reveal" id="menuPhotoWrap">
+        <img id="menuPhoto" src="assets/img/food-alaminuti.jpg" alt="" loading="lazy"
+             onerror="this.style.display='none'; document.getElementById('menuPhotoPlaceholder').classList.add('show');">
+        <div class="media-placeholder menu-photo-placeholder" id="menuPhotoPlaceholder"></div>
+      </div>
+
+      <div class="menu-panels reveal" id="menuPanels"></div>
+    </div>
+  </section>
+
+  <!-- ============================= WEEKLY MENU ============================= -->
+  <section class="weekly-section" id="weekly">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow" data-i18n="weeklySection.eyebrow">Седмично меню</p>
+        <h2 data-i18n="weeklySection.heading">Обедно меню по дни</h2>
+        <p class="section-sub" data-i18n="weeklySection.subheading">Заявки за обедно меню се приемат до 11:00 часа.</p>
+      </div>
+
+      <div class="menu-tabs" id="weekTabs" role="tablist"></div>
+      <div class="weekly-panel reveal" id="weeklyPanel"></div>
+    </div>
+  </section>
+
+  <!-- ============================= CONTACT / ORDER ============================= -->
+  <section class="contact" id="contact">
+    <div class="container contact-inner reveal">
+      <div class="contact-copy">
+        <p class="eyebrow eyebrow-light" data-i18n="order.eyebrow">Поръчка</p>
+        <h2 data-i18n="order.heading">Поръчайте по телефона</h2>
+        <p data-i18n="order.body">Обадете се на един от номерата по-долу — ще приготвим и доставим поръчката ви бързо, топло и с грижа.</p>
+        <ul class="contact-facts">
+          <li><span class="dot"></span><span data-i18n="order.deliveryBadge">Доставка за наша сметка</span></li>
+          <li><span class="dot"></span><span data-i18n="order.weeklyDeadline">Обедно меню: заявки до 11:00 ч.</span></li>
+          <li><span class="dot"></span><span data-i18n="order.mainDeadline">Основно меню: заявки за храна за вкъщи до 14:00 ч.</span></li>
+        </ul>
+      </div>
+      <div class="contact-phones-wrap">
+        <div class="contact-phones" id="contactPhones"></div>
+        <p class="contact-fine" data-i18n="contact.deliveryText">Безплатна доставка за наша сметка.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-logo">
+        <img class="brand-logo-img" src="assets/img/logo.png" alt="Кетъринг Фирдаус"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <span class="brand-logo-fallback">К</span>
+      </span>
+      <p class="footer-tagline" data-i18n="footer.tagline">Вкусна храна, приготвена с грижа.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer.navHeading">Навигация</h4>
+      <a href="#top" data-i18n="nav.home">Начало</a>
+      <a href="#about" data-i18n="nav.about">За нас</a>
+      <a href="#menu" data-i18n="nav.menu">Меню</a>
+      <a href="#weekly" data-i18n="nav.weekly">Седмично меню</a>
+      <a href="#contact" data-i18n="nav.contact">Контакти</a>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="footer.contactHeading">Контакти</h4>
+      <div id="footerPhones" class="footer-phones"></div>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-i18n="langSwitcher.label">Език</h4>
+      <div class="footer-langs" id="footerLangs"></div>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <p>&copy; <span id="year"></span> Кетъринг Фирдаус. <span data-i18n="footer.rights">Всички права запазени.</span></p>
+  </div>
+</footer>
+
+<!-- Mobile sticky call bar -->
+<a class="mobile-call-bar" href="tel:0879333926">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2-9 0-15-6-15-15z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+  <span data-i18n="mobileCallBar">Обади се за поръчка</span>
+</a>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
