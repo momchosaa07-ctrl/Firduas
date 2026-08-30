@@ -136,19 +136,26 @@
     );
   }
 
+  function weeklySingle(lang, heading, item) {
+    if (!item) return "";
+    return (
+      '<div class="weekly-bread"><p class="weekly-group-title">' + heading + '</p>' +
+      '<div class="menu-row"><div class="menu-row-label"><span class="menu-row-name">' +
+      (item.name[lang] || item.name.bg) + '</span></div><span class="menu-row-dots" aria-hidden="true"></span>' +
+      '<span class="menu-row-price">' + formatPrice(item.price) + "</span></div></div>"
+    );
+  }
+
   function renderWeekPanel(lang) {
     var panel = document.getElementById("weeklyPanel");
     var w = window.WEEKLY_MENU;
     var day = w.data[currentDay];
-    var bread = day.bread;
     panel.innerHTML =
       weeklyGroup(lang, t(lang, "weeklySection.soups"), day.soups) +
       weeklyGroup(lang, t(lang, "weeklySection.mains"), day.mains) +
       weeklyGroup(lang, t(lang, "weeklySection.desserts"), day.desserts) +
-      '<div class="weekly-bread"><p class="weekly-group-title">' + t(lang, "weeklySection.bread") + '</p>' +
-      '<div class="menu-row"><div class="menu-row-label"><span class="menu-row-name">' +
-      (bread.name[lang] || bread.name.bg) + '</span></div><span class="menu-row-dots" aria-hidden="true"></span>' +
-      '<span class="menu-row-price">' + formatPrice(bread.price) + "</span></div></div>";
+      weeklySingle(lang, t(lang, "weeklySection.bread"), day.bread) +
+      weeklySingle(lang, t(lang, "weeklySection.combo"), day.combo);
   }
 
   /* ---------------------------- why-choose-us render (top 3 only) ---------------------------- */
