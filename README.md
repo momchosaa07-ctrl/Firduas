@@ -1,8 +1,8 @@
 # Кетъринг Фирдаус — website
 
 Static marketing site for Catering Firdaus: full menu, weekly lunch menu,
-prices and phone ordering, in four languages (BG / EN / TR / AR, with RTL
-support for Arabic).
+prices and phone ordering, plus a parties & events section with an enquiry
+form — in four languages (BG / EN / TR / AR, with RTL support for Arabic).
 
 No build step, no dependencies, no framework — plain HTML, CSS and vanilla JS.
 Whatever is in this folder is exactly what gets served.
@@ -36,6 +36,19 @@ Each dish carries a name in all four languages; the weight and price are shared.
 
 To change a price, edit the number in that one place — it updates everywhere
 it appears, in every language.
+
+## The events enquiry form
+
+`Партита и събития` (`#events`) pitches the service; `#event-inquiry` holds the
+form. The site has no backend and no mailbox, so **the form does not post
+anywhere**. It validates the fields, composes the enquiry as text, and hands it
+to the channels the business already runs on — a call, a prefilled SMS, or the
+clipboard. Nothing is silently dropped.
+
+To have enquiries arrive by email instead, point the `<form>` at a form-handling
+endpoint (Formspree, Web3Forms, a Cloudflare Pages Function) and replace the
+success panel's hand-off with the POST result. All the copy for it is already
+translated under `events.form` in `assets/js/i18n.js`.
 
 ## Local preview
 

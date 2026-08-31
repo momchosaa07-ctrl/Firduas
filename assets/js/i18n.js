@@ -9,10 +9,10 @@ window.SITE_I18N = {
     _meta: { dir: "ltr", label: "Български", htmlLang: "bg" },
     seo: {
       title: "Кетъринг Фирдаус — Обедно меню и кетъринг с безплатна доставка",
-      description: "Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка. Разгледайте седмичното меню и основното меню, и поръчайте по телефона."
+      description: "Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка. Организираме и партита, фирмени събития и семейни празници. Разгледайте менюто и поръчайте по телефона."
     },
     skipLink: "Към съдържанието",
-    nav: { home: "Начало", about: "За нас", menu: "Меню", weekly: "Седмично меню", contact: "Контакти", order: "Поръчай сега" },
+    nav: { home: "Начало", about: "За нас", menu: "Меню", weekly: "Седмично меню", events: "Партита и събития", contact: "Контакти", order: "Поръчай сега" },
     langSwitcher: { label: "Език" },
     hero: {
       eyebrow: "Кетъринг Фирдаус",
@@ -61,6 +61,50 @@ window.SITE_I18N = {
       soups: "Супи", mains: "Основни ястия", desserts: "Десерти", bread: "Хляб",
       days: { mon: "Понеделник", tue: "Вторник", wed: "Сряда", thu: "Четвъртък", fri: "Петък" }
     },
+    events: {
+      eyebrow: "Партита и събития",
+      heading: "Планирате специален повод?",
+      subheading: "Ние ще се погрижим за вкусната храна и приятната атмосфера.",
+      body: "Подходящо място за рождени дни, частни партита, фирмени събития, семейни празници и други специални моменти.",
+      cta: "Направи запитване",
+      imageAlt: "Празнична маса, подредена от Кетъринг Фирдаус",
+      types: [
+        { key: "birthday", label: "Рождени дни" },
+        { key: "private", label: "Частни партита" },
+        { key: "corporate", label: "Фирмени събития" },
+        { key: "family", label: "Семейни празници" },
+        { key: "special", label: "Специални поводи" },
+        { key: "group", label: "Групови събирания" }
+      ],
+      form: {
+        eyebrow: "Запитване",
+        heading: "Разкажете ни за събитието",
+        body: "Попълнете накратко какво планирате и ще уточним менюто и детайлите заедно.",
+        name: "Име",
+        namePlaceholder: "Вашето име",
+        phone: "Телефон",
+        phonePlaceholder: "напр. 0879 333 926",
+        type: "Вид събитие",
+        typePlaceholder: "Изберете вид събитие",
+        date: "Предпочитана дата",
+        guests: "Брой гости",
+        guestsPlaceholder: "напр. 30",
+        notes: "Допълнителна информация",
+        notesPlaceholder: "Меню, час, място, специални изисквания…",
+        optional: "по избор",
+        submit: "Направи запитване",
+        required: "Моля, попълнете това поле.",
+        invalidPhone: "Моля, въведете валиден телефонен номер.",
+        summaryTitle: "Запитване за събитие",
+        successHeading: "Запитването е готово",
+        successBody: "Остава да ни го изпратите — обадете се или го изпратете като SMS. Текстът по-долу е попълнен вместо вас.",
+        call: "Обади се сега",
+        sms: "Изпрати като SMS",
+        copy: "Копирай текста",
+        copied: "Копирано",
+        reset: "Ново запитване"
+      }
+    },
     order: {
       eyebrow: "Поръчка",
       heading: "Поръчайте по телефона",
@@ -93,10 +137,10 @@ window.SITE_I18N = {
     _meta: { dir: "ltr", label: "English", htmlLang: "en" },
     seo: {
       title: "Catering Firdaus — Daily Lunch Menu & Catering with Free Delivery",
-      description: "Catering Firdaus serves freshly prepared lunch and dinner with free delivery. Browse the weekly lunch menu and full menu, and order by phone."
+      description: "Catering Firdaus serves freshly prepared lunch and dinner with free delivery, and caters parties, corporate events and family celebrations. Browse the menu and order by phone."
     },
     skipLink: "Skip to content",
-    nav: { home: "Home", about: "About", menu: "Menu", weekly: "Weekly Menu", contact: "Contact", order: "Order Now" },
+    nav: { home: "Home", about: "About", menu: "Menu", weekly: "Weekly Menu", events: "Parties & Events", contact: "Contact", order: "Order Now" },
     langSwitcher: { label: "Language" },
     hero: {
       eyebrow: "Catering Firdaus",
@@ -145,6 +189,50 @@ window.SITE_I18N = {
       soups: "Soups", mains: "Main Dishes", desserts: "Desserts", bread: "Bread",
       days: { mon: "Monday", tue: "Tuesday", wed: "Wednesday", thu: "Thursday", fri: "Friday" }
     },
+    events: {
+      eyebrow: "Parties & Events",
+      heading: "Planning a special occasion?",
+      subheading: "We take care of the food and the atmosphere.",
+      body: "A good fit for birthdays, private parties, corporate events, family celebrations and other special moments.",
+      cta: "Send an enquiry",
+      imageAlt: "A celebration table catered by Catering Firdaus",
+      types: [
+        { key: "birthday", label: "Birthdays" },
+        { key: "private", label: "Private parties" },
+        { key: "corporate", label: "Corporate events" },
+        { key: "family", label: "Family celebrations" },
+        { key: "special", label: "Special occasions" },
+        { key: "group", label: "Group gatherings" }
+      ],
+      form: {
+        eyebrow: "Enquiry",
+        heading: "Tell us about your event",
+        body: "Give us a few details about what you are planning and we will agree the menu and the rest together.",
+        name: "Name",
+        namePlaceholder: "Your name",
+        phone: "Phone",
+        phonePlaceholder: "e.g. 0879 333 926",
+        type: "Event type",
+        typePlaceholder: "Choose an event type",
+        date: "Preferred date",
+        guests: "Number of guests",
+        guestsPlaceholder: "e.g. 30",
+        notes: "Additional information",
+        notesPlaceholder: "Menu, time, venue, special requirements…",
+        optional: "optional",
+        submit: "Send an enquiry",
+        required: "Please fill in this field.",
+        invalidPhone: "Please enter a valid phone number.",
+        summaryTitle: "Event enquiry",
+        successHeading: "Your enquiry is ready",
+        successBody: "One step left — call us or send it as an SMS. The text below has been filled in for you.",
+        call: "Call now",
+        sms: "Send as SMS",
+        copy: "Copy the text",
+        copied: "Copied",
+        reset: "New enquiry"
+      }
+    },
     order: {
       eyebrow: "Order",
       heading: "Order by Phone",
@@ -177,10 +265,10 @@ window.SITE_I18N = {
     _meta: { dir: "ltr", label: "Türkçe", htmlLang: "tr" },
     seo: {
       title: "Catering Firdaus — Günlük Öğle Menüsü ve Ücretsiz Teslimatlı Catering",
-      description: "Catering Firdaus, taze hazırlanmış öğle ve akşam yemeklerini ücretsiz teslimatla sunar. Haftalık menüyü ve ana menüyü inceleyin, telefonla sipariş verin."
+      description: "Catering Firdaus, taze hazırlanmış öğle ve akşam yemeklerini ücretsiz teslimatla sunar; parti, kurumsal etkinlik ve aile kutlamaları için de hizmet verir. Menüyü inceleyin, telefonla sipariş verin."
     },
     skipLink: "İçeriğe geç",
-    nav: { home: "Ana Sayfa", about: "Hakkımızda", menu: "Menü", weekly: "Haftalık Menü", contact: "İletişim", order: "Şimdi Sipariş Ver" },
+    nav: { home: "Ana Sayfa", about: "Hakkımızda", menu: "Menü", weekly: "Haftalık Menü", events: "Parti ve Etkinlik", contact: "İletişim", order: "Şimdi Sipariş Ver" },
     langSwitcher: { label: "Dil" },
     hero: {
       eyebrow: "Catering Firdaus",
@@ -229,6 +317,50 @@ window.SITE_I18N = {
       soups: "Çorbalar", mains: "Ana Yemekler", desserts: "Tatlılar", bread: "Ekmek",
       days: { mon: "Pazartesi", tue: "Salı", wed: "Çarşamba", thu: "Perşembe", fri: "Cuma" }
     },
+    events: {
+      eyebrow: "Partiler ve Etkinlikler",
+      heading: "Özel bir gün mü planlıyorsunuz?",
+      subheading: "Lezzetli yemeği ve keyifli atmosferi biz üstleniyoruz.",
+      body: "Doğum günleri, özel partiler, kurumsal etkinlikler, aile kutlamaları ve diğer özel anlar için uygun bir adres.",
+      cta: "Teklif iste",
+      imageAlt: "Catering Firdaus tarafından hazırlanmış kutlama masası",
+      types: [
+        { key: "birthday", label: "Doğum günleri" },
+        { key: "private", label: "Özel partiler" },
+        { key: "corporate", label: "Kurumsal etkinlikler" },
+        { key: "family", label: "Aile kutlamaları" },
+        { key: "special", label: "Özel günler" },
+        { key: "group", label: "Grup buluşmaları" }
+      ],
+      form: {
+        eyebrow: "Talep",
+        heading: "Etkinliğinizden bahsedin",
+        body: "Ne planladığınızı kısaca yazın; menüyü ve ayrıntıları birlikte belirleyelim.",
+        name: "Ad",
+        namePlaceholder: "Adınız",
+        phone: "Telefon",
+        phonePlaceholder: "örn. 0879 333 926",
+        type: "Etkinlik türü",
+        typePlaceholder: "Etkinlik türünü seçin",
+        date: "Tercih edilen tarih",
+        guests: "Kişi sayısı",
+        guestsPlaceholder: "örn. 30",
+        notes: "Ek bilgi",
+        notesPlaceholder: "Menü, saat, mekân, özel istekler…",
+        optional: "isteğe bağlı",
+        submit: "Teklif iste",
+        required: "Lütfen bu alanı doldurun.",
+        invalidPhone: "Lütfen geçerli bir telefon numarası girin.",
+        summaryTitle: "Etkinlik talebi",
+        successHeading: "Talebiniz hazır",
+        successBody: "Tek adım kaldı — bizi arayın ya da SMS olarak gönderin. Aşağıdaki metni sizin için hazırladık.",
+        call: "Hemen ara",
+        sms: "SMS olarak gönder",
+        copy: "Metni kopyala",
+        copied: "Kopyalandı",
+        reset: "Yeni talep"
+      }
+    },
     order: {
       eyebrow: "Sipariş",
       heading: "Telefonla Sipariş Verin",
@@ -261,10 +393,10 @@ window.SITE_I18N = {
     _meta: { dir: "rtl", label: "العربية", htmlLang: "ar" },
     seo: {
       title: "كيترنغ فردوس — قائمة الغداء اليومية وخدمات التموين مع توصيل مجاني",
-      description: "يقدم كيترنغ فردوس وجبات غداء وعشاء طازجة مع توصيل مجاني. تصفح قائمة الأسبوع والقائمة الرئيسية واطلب عبر الهاتف."
+      description: "يقدم كيترنغ فردوس وجبات غداء وعشاء طازجة مع توصيل مجاني، كما ننظّم الحفلات وفعاليات الشركات والمناسبات العائلية. تصفح القائمة واطلب عبر الهاتف."
     },
     skipLink: "الانتقال إلى المحتوى",
-    nav: { home: "الرئيسية", about: "من نحن", menu: "القائمة", weekly: "القائمة الأسبوعية", contact: "تواصل معنا", order: "اطلب الآن" },
+    nav: { home: "الرئيسية", about: "من نحن", menu: "القائمة", weekly: "القائمة الأسبوعية", events: "الحفلات والمناسبات", contact: "تواصل معنا", order: "اطلب الآن" },
     langSwitcher: { label: "اللغة" },
     hero: {
       eyebrow: "كيترنغ فردوس",
@@ -312,6 +444,50 @@ window.SITE_I18N = {
       subheading: "تُقبل طلبات قائمة الغداء الأسبوعية حتى الساعة 11:00.",
       soups: "الشوربات", mains: "الأطباق الرئيسية", desserts: "الحلويات", bread: "الخبز",
       days: { mon: "الاثنين", tue: "الثلاثاء", wed: "الأربعاء", thu: "الخميس", fri: "الجمعة" }
+    },
+    events: {
+      eyebrow: "الحفلات والمناسبات",
+      heading: "هل تخطط لمناسبة خاصة؟",
+      subheading: "نحن نتكفل بالطعام اللذيذ والأجواء الجميلة.",
+      body: "مكان مناسب لأعياد الميلاد والحفلات الخاصة وفعاليات الشركات والمناسبات العائلية وغيرها من اللحظات المميزة.",
+      cta: "أرسل استفسارًا",
+      imageAlt: "طاولة احتفال من إعداد كيترنغ فردوس",
+      types: [
+        { key: "birthday", label: "أعياد الميلاد" },
+        { key: "private", label: "حفلات خاصة" },
+        { key: "corporate", label: "فعاليات الشركات" },
+        { key: "family", label: "مناسبات عائلية" },
+        { key: "special", label: "مناسبات خاصة" },
+        { key: "group", label: "تجمعات جماعية" }
+      ],
+      form: {
+        eyebrow: "استفسار",
+        heading: "أخبرنا عن مناسبتك",
+        body: "اكتب لنا باختصار ما الذي تخطط له وسنتفق معًا على القائمة والتفاصيل.",
+        name: "الاسم",
+        namePlaceholder: "اسمك",
+        phone: "الهاتف",
+        phonePlaceholder: "مثال 0879 333 926",
+        type: "نوع المناسبة",
+        typePlaceholder: "اختر نوع المناسبة",
+        date: "التاريخ المفضل",
+        guests: "عدد الضيوف",
+        guestsPlaceholder: "مثال 30",
+        notes: "معلومات إضافية",
+        notesPlaceholder: "القائمة، الوقت، المكان، طلبات خاصة…",
+        optional: "اختياري",
+        submit: "أرسل استفسارًا",
+        required: "يرجى تعبئة هذا الحقل.",
+        invalidPhone: "يرجى إدخال رقم هاتف صحيح.",
+        summaryTitle: "استفسار عن مناسبة",
+        successHeading: "استفسارك جاهز",
+        successBody: "بقيت خطوة واحدة — اتصل بنا أو أرسله كرسالة نصية. النص أدناه معبأ من أجلك.",
+        call: "اتصل الآن",
+        sms: "إرسال كرسالة نصية",
+        copy: "انسخ النص",
+        copied: "تم النسخ",
+        reset: "استفسار جديد"
+      }
     },
     order: {
       eyebrow: "الطلب",

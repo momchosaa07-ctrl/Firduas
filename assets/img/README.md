@@ -14,10 +14,17 @@ changes needed) — until then, an elegant dark placeholder is shown instead.
 | `assets/img/food-grill.jpg`          | Main Menu → "Grill" category banner              | Wide landscape (21:8), e.g. the grill/flame photo |
 | `assets/img/food-salads.jpg`         | Main Menu → "Salads" category banner             | Wide landscape (21:8), e.g. the salad bowl photo |
 | `assets/img/food-sides.jpg`          | Main Menu → "Sides" category banner              | Wide landscape (21:8), e.g. the garnish trays photo |
+| `assets/img/events.jpg`              | "Партита и събития" section — **not supplied yet** | Landscape 16:10, 1600×1000 or larger. A laid celebration table, a full buffet, or a group party spread |
 | `assets/img/og-image.jpg`            | Social share preview (Facebook/Viber/WhatsApp)   | 1200×630, can reuse hero-food.jpg |
 
 Any image not yet present simply falls back to a designed dark placeholder
 (no broken-image icons) — nothing looks unfinished.
+
+> **`events.jpg` is the one file that has never been supplied.** The
+> "Партита и събития" section is live and renders its placeholder panel in
+> the meantime. Drop a real photo at that path and it appears by itself —
+> no code change. A genuine photo of a Firdaus event would serve this
+> section far better than stock.
 
 ## Current photos are TEMPORARY stock — replace when possible
 
