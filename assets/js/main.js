@@ -173,11 +173,203 @@
     }).join("");
   }
 
+  /* ---------------------------- parties & events ---------------------------- */
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function eventTypes(lang) {
+    var ev = window.SITE_I18N[lang].events;
+    return (ev && ev.types) || [];
+  }
+
+  function renderEventTypes(lang) {
+    var list = document.getElementById("eventsTypes");
+    var types = eventTypes(lang);
+
+    if (list) {
+      list.innerHTML = types.map(function (item) {
+        return '<li class="events-type"><span class="dot"></span>' + esc(item.label) + "</li>";
+      }).join("");
+    }
+
+    var select = document.getElementById("ev-type");
+    if (select) {
+      // keep whatever the visitor already picked when the language changes
+      var chosen = select.value;
+      select.innerHTML =
+        '<option value="">' + esc(t(lang, "events.form.typePlaceholder")) + "</option>" +
+        types.map(function (item) {
+          return '<option value="' + esc(item.key) + '">' + esc(item.label) + "</option>";
+        }).join("");
+      if (chosen) select.value = chosen;
+    }
+  }
+
+  /* The site has no backend, so an enquiry cannot be posted anywhere. Instead
+     the form composes the message and hands it to the channels the business
+     already runs on: a phone call, an SMS, or the clipboard. */
+  var lastInquiry = null;
+
+  function eventTypeLabel(lang, key) {
+    var found = null;
+    eventTypes(lang).forEach(function (item) { if (item.key === key) found = item.label; });
+    return found || key;
+  }
+
+  function buildSummary(lang, data) {
+    var f = "events.form.";
+    var lines = [t(lang, f + "summaryTitle")];
+    lines.push(t(lang, f + "name") + ": " + data.name);
+    lines.push(t(lang, f + "phone") + ": " + data.phone);
+    lines.push(t(lang, f + "type") + ": " + eventTypeLabel(lang, data.type));
+    if (data.date) lines.push(t(lang, f + "date") + ": " + data.date);
+    if (data.guests) lines.push(t(lang, f + "guests") + ": " + data.guests);
+    if (data.notes) lines.push(t(lang, f + "notes") + ": " + data.notes);
+    return lines.join("\n");
+  }
+
+  function setFieldError(input, message) {
+    var box = document.getElementById("err-" + input.id);
+    input.classList.toggle("has-error", !!message);
+    input.setAttribute("aria-invalid", message ? "true" : "false");
+    if (!box) return;
+    box.textContent = message || "";
+    box.hidden = !message;
+  }
+
+  function validPhone(value) {
+    return /^[+()\d][\d\s().-]{5,}$/.test(value.trim());
+  }
+
+  function refreshSummary(lang) {
+    var out = document.getElementById("eventSummary");
+    if (!out || !lastInquiry) return;
+    var text = buildSummary(lang, lastInquiry);
+    out.textContent = text;
+
+    var phone = window.SITE_DATA.phones[0];
+    var call = document.getElementById("eventCallBtn");
+    var sms = document.getElementById("eventSmsBtn");
+    if (call) call.setAttribute("href", "tel:" + phone);
+    // "?&body=" is the form both iOS and Android accept
+    if (sms) sms.setAttribute("href", "sms:" + phone + "?&body=" + encodeURIComponent(text));
+  }
+
+  function bindEventForm() {
+    var form = document.getElementById("eventForm");
+    if (!form) return;
+
+    var success = document.getElementById("eventFormSuccess");
+    var copyBtn = document.getElementById("eventCopyBtn");
+    var resetBtn = document.getElementById("eventResetBtn");
+
+    var required = ["ev-name", "ev-phone", "ev-type"];
+    required.forEach(function (id) {
+      var input = document.getElementById(id);
+      if (!input) return;
+      // clear the error as soon as the visitor starts putting it right
+      input.addEventListener("input", function () { setFieldError(input, ""); });
+      input.addEventListener("change", function () { setFieldError(input, ""); });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var firstInvalid = null;
+      required.forEach(function (id) {
+        var input = document.getElementById(id);
+        if (!input) return;
+        var value = input.value.trim();
+        var message = "";
+        if (!value) message = t(currentLang, "events.form.required");
+        else if (id === "ev-phone" && !validPhone(value)) message = t(currentLang, "events.form.invalidPhone");
+        setFieldError(input, message);
+        if (message && !firstInvalid) firstInvalid = input;
+      });
+
+      if (firstInvalid) { firstInvalid.focus(); return; }
+
+      lastInquiry = {
+        name: document.getElementById("ev-name").value.trim(),
+        phone: document.getElementById("ev-phone").value.trim(),
+        type: document.getElementById("ev-type").value,
+        date: document.getElementById("ev-date").value,
+        guests: document.getElementById("ev-guests").value,
+        notes: document.getElementById("ev-notes").value.trim()
+      };
+
+      refreshSummary(currentLang);
+      form.hidden = true;
+      success.hidden = false;
+      success.setAttribute("tabindex", "-1");
+      // focus without the browser's own scroll, then scroll properly — that
+      // route honours scroll-padding-top, so the fixed header stays clear
+      success.focus({ preventScroll: true });
+      success.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        var text = document.getElementById("eventSummary").textContent;
+        var label = copyBtn.querySelector("span");
+        var done = function () {
+          label.textContent = t(currentLang, "events.form.copied");
+          setTimeout(function () { label.textContent = t(currentLang, "events.form.copy"); }, 2200);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, fallbackCopy);
+        } else {
+          fallbackCopy();
+        }
+        function fallbackCopy() {
+          var area = document.createElement("textarea");
+          area.value = text;
+          area.setAttribute("readonly", "");
+          area.style.position = "fixed";
+          area.style.opacity = "0";
+          document.body.appendChild(area);
+          area.select();
+          try { document.execCommand("copy"); done(); } catch (err) { /* nothing else to try */ }
+          document.body.removeChild(area);
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        form.reset();
+        renderEventTypes(currentLang);
+        required.forEach(function (id) {
+          var input = document.getElementById(id);
+          if (input) setFieldError(input, "");
+        });
+        lastInquiry = null;
+        success.hidden = true;
+        form.hidden = false;
+        document.getElementById("ev-name").focus();
+      });
+    }
+  }
+
   /* ---------------------------- static text apply ---------------------------- */
   function applyStaticText(lang) {
     Array.prototype.forEach.call(document.querySelectorAll("[data-i18n]"), function (el) {
       var val = t(lang, el.getAttribute("data-i18n"));
       if (val) el.textContent = val;
+    });
+    applyAttr(lang, "data-i18n-placeholder", "placeholder");
+    applyAttr(lang, "data-i18n-alt", "alt");
+  }
+
+  /* Same lookup as data-i18n, but writes an attribute instead of the text —
+     needed for placeholders and alt text, which have no text node. */
+  function applyAttr(lang, dataAttr, target) {
+    Array.prototype.forEach.call(document.querySelectorAll("[" + dataAttr + "]"), function (el) {
+      var val = t(lang, el.getAttribute(dataAttr));
+      if (val) el.setAttribute(target, val);
     });
   }
 
@@ -210,6 +402,8 @@
     renderMenuPanels(lang);
     renderWeekTabs(lang);
     renderWeekPanel(lang);
+    renderEventTypes(lang);
+    refreshSummary(lang);
 
     var codeEl = document.getElementById("langToggleCode");
     if (codeEl) codeEl.textContent = lang.toUpperCase();
@@ -325,6 +519,7 @@
     renderFooterLangs();
     bindLangMenu();
     bindMobileNav();
+    bindEventForm();
 
     setLanguage(currentLang);
 

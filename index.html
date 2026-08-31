@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Кетъринг Фирдаус — Обедно меню и кетъринг с безплатна доставка</title>
-<meta name="description" content="Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка. Разгледайте седмичното меню и основното меню, и поръчайте по телефона.">
+<meta name="description" content="Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка. Организираме и партита, фирмени събития и семейни празници. Разгледайте менюто и поръчайте по телефона.">
 <meta name="theme-color" content="#0a0c09">
 <link rel="canonical" href="https://cateringfirdaus.bg/">
 
@@ -12,7 +12,7 @@
 <meta property="og:type" content="restaurant.menu">
 <meta property="og:site_name" content="Кетъринг Фирдаус">
 <meta property="og:title" content="Кетъринг Фирдаус — Обедно меню и кетъринг с безплатна доставка">
-<meta property="og:description" content="Прясно приготвена храна за обяд и вечеря, с безплатна доставка. Поръчайте по телефона.">
+<meta property="og:description" content="Прясно приготвена храна за обяд и вечеря, с безплатна доставка. Организираме партита, фирмени събития и семейни празници.">
 <meta property="og:image" content="https://cateringfirdaus.bg/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -41,7 +41,13 @@
   "telephone": ["+359879333926", "+359878924996", "+359877335883"],
   "servesCuisine": "Bulgarian",
   "priceRange": "€1 - €6",
-  "url": "https://cateringfirdaus.bg/"
+  "url": "https://cateringfirdaus.bg/",
+  "description": "Кетъринг Фирдаус предлага прясно приготвена храна за обяд и вечеря с безплатна доставка, както и кетъринг за партита, фирмени събития и семейни празници.",
+  "amenityFeature": {
+    "@type": "LocationFeatureSpecification",
+    "name": "Партита и събития",
+    "value": true
+  }
 }
 </script>
 </head>
@@ -65,6 +71,7 @@
       <a href="#about" data-i18n="nav.about">За нас</a>
       <a href="#menu" data-i18n="nav.menu">Меню</a>
       <a href="#weekly" data-i18n="nav.weekly">Седмично меню</a>
+      <a href="#events" data-i18n="nav.events">Партита и събития</a>
       <a href="#contact" data-i18n="nav.contact">Контакти</a>
     </nav>
 
@@ -204,6 +211,116 @@
     </div>
   </section>
 
+  <!-- ============================= PARTIES & EVENTS ============================= -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow" data-i18n="events.eyebrow">Партита и събития</p>
+        <h2 data-i18n="events.heading">Планирате специален повод?</h2>
+        <p class="section-sub" data-i18n="events.subheading">Ние ще се погрижим за вкусната храна и приятната атмосфера.</p>
+      </div>
+
+      <div class="events-inner reveal">
+        <div class="events-media">
+          <img src="assets/img/events.jpg" alt="Празнична маса, подредена от Кетъринг Фирдаус"
+               loading="lazy" data-i18n-alt="events.imageAlt"
+               onerror="this.remove(); document.getElementById('eventsPlaceholder').classList.add('show');">
+          <div class="media-placeholder events-placeholder" id="eventsPlaceholder"></div>
+        </div>
+
+        <div class="events-copy">
+          <p data-i18n="events.body">Подходящо място за рождени дни, частни партита, фирмени събития, семейни празници и други специални моменти.</p>
+          <ul class="events-types" id="eventsTypes"></ul>
+          <a class="btn btn-primary btn-lg" href="#event-inquiry" data-i18n="events.cta">Направи запитване</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= EVENT INQUIRY ============================= -->
+  <section class="event-inquiry" id="event-inquiry">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow" data-i18n="events.form.eyebrow">Запитване</p>
+        <h2 data-i18n="events.form.heading">Разкажете ни за събитието</h2>
+        <p class="section-sub" data-i18n="events.form.body">Попълнете накратко какво планирате и ще уточним менюто и детайлите заедно.</p>
+      </div>
+
+      <div class="event-form-panel reveal">
+        <form class="event-form" id="eventForm" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="ev-name"><span data-i18n="events.form.name">Име</span></label>
+            <input class="form-control" type="text" id="ev-name" name="name" autocomplete="name"
+                   required aria-describedby="err-ev-name"
+                   data-i18n-placeholder="events.form.namePlaceholder">
+            <p class="form-error" id="err-ev-name" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="ev-phone"><span data-i18n="events.form.phone">Телефон</span></label>
+            <input class="form-control" type="tel" id="ev-phone" name="phone" autocomplete="tel"
+                   inputmode="tel" required aria-describedby="err-ev-phone"
+                   data-i18n-placeholder="events.form.phonePlaceholder">
+            <p class="form-error" id="err-ev-phone" hidden></p>
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label class="form-label" for="ev-type"><span data-i18n="events.form.type">Вид събитие</span></label>
+            <select class="form-control form-select" id="ev-type" name="type"
+                    required aria-describedby="err-ev-type"></select>
+            <p class="form-error" id="err-ev-type" hidden></p>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="ev-date">
+              <span data-i18n="events.form.date">Предпочитана дата</span>
+              <span class="form-optional" data-i18n="events.form.optional">по избор</span>
+            </label>
+            <input class="form-control" type="date" id="ev-date" name="date">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="ev-guests">
+              <span data-i18n="events.form.guests">Брой гости</span>
+              <span class="form-optional" data-i18n="events.form.optional">по избор</span>
+            </label>
+            <input class="form-control" type="number" id="ev-guests" name="guests"
+                   min="1" max="2000" inputmode="numeric"
+                   data-i18n-placeholder="events.form.guestsPlaceholder">
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label class="form-label" for="ev-notes">
+              <span data-i18n="events.form.notes">Допълнителна информация</span>
+              <span class="form-optional" data-i18n="events.form.optional">по избор</span>
+            </label>
+            <textarea class="form-control form-textarea" id="ev-notes" name="notes" rows="4"
+                      data-i18n-placeholder="events.form.notesPlaceholder"></textarea>
+          </div>
+
+          <div class="form-actions form-field-wide">
+            <button class="btn btn-primary btn-lg" type="submit" data-i18n="events.form.submit">Направи запитване</button>
+          </div>
+        </form>
+
+        <div class="event-form-success" id="eventFormSuccess" hidden>
+          <h3 data-i18n="events.form.successHeading">Запитването е готово</h3>
+          <p data-i18n="events.form.successBody">Остава да ни го изпратите — обадете се или го изпратете като SMS. Текстът по-долу е попълнен вместо вас.</p>
+          <pre class="event-summary" id="eventSummary"></pre>
+          <div class="event-success-actions">
+            <a class="btn btn-primary" id="eventCallBtn" href="tel:0879333926">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 2c1 3 3 5 6 6l2-2 5 2v2c0 1-1 2-2 2-9 0-15-6-15-15z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+              <span data-i18n="events.form.call">Обади се сега</span>
+            </a>
+            <a class="btn btn-outline" id="eventSmsBtn" href="sms:0879333926"><span data-i18n="events.form.sms">Изпрати като SMS</span></a>
+            <button class="btn btn-outline" type="button" id="eventCopyBtn"><span data-i18n="events.form.copy">Копирай текста</span></button>
+          </div>
+          <button class="event-reset" type="button" id="eventResetBtn" data-i18n="events.form.reset">Ново запитване</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================= CONTACT / ORDER ============================= -->
   <section class="contact" id="contact">
     <div class="container contact-inner reveal">
@@ -244,6 +361,7 @@
       <a href="#about" data-i18n="nav.about">За нас</a>
       <a href="#menu" data-i18n="nav.menu">Меню</a>
       <a href="#weekly" data-i18n="nav.weekly">Седмично меню</a>
+      <a href="#events" data-i18n="nav.events">Партита и събития</a>
       <a href="#contact" data-i18n="nav.contact">Контакти</a>
     </div>
 

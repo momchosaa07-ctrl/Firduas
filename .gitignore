@@ -60,7 +60,9 @@ coverage/
 .netlify
 
 # Local dev tooling (Claude Code preview server) — not needed to deploy
-.claude/
+.claude/*
+# ...except shared skills, which are committed so every session picks them up
+!.claude/skills/
 
 # ---------------------------------------------------------------------------
 # OS / editor cruft

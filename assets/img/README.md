@@ -14,10 +14,20 @@ changes needed) — until then, an elegant dark placeholder is shown instead.
 | `assets/img/food-grill.jpg`          | Main Menu → "Grill" category banner              | Wide landscape (21:8), e.g. the grill/flame photo |
 | `assets/img/food-salads.jpg`         | Main Menu → "Salads" category banner             | Wide landscape (21:8), e.g. the salad bowl photo |
 | `assets/img/food-sides.jpg`          | Main Menu → "Sides" category banner              | Wide landscape (21:8), e.g. the garnish trays photo |
+| `assets/img/events.jpg`              | "Партита и събития" section (in place ✓)          | Landscape 16:10. Currently a 1440×900 crop of `showcase.jpg` — replace with a real Firdaus event photo |
 | `assets/img/og-image.jpg`            | Social share preview (Facebook/Viber/WhatsApp)   | 1200×630, can reuse hero-food.jpg |
 
 Any image not yet present simply falls back to a designed dark placeholder
 (no broken-image icons) — nothing looks unfinished.
+
+> **`events.jpg` is a crop, not its own photograph.** It is the right-hand
+> 1440×900 region of `showcase.jpg` — the part showing the guests, the warm
+> bokeh and the stacked service plates, which is what reads as "an event is
+> happening". It was cropped rather than sourced because the two photos share
+> one Unsplash original; the same licence therefore covers both. The framing
+> differs enough that the two do not read as a repeat, but a genuine photo of
+> a real Firdaus party would be markedly better — drop one at that path and
+> it replaces this with no code change.
 
 ## Current photos are TEMPORARY stock — replace when possible
 
@@ -31,7 +41,7 @@ Sourced from unsplash.com — photo IDs, in case one needs re-downloading:
 |---|---|
 | hero-food.jpg / og-image.jpg | `photo-1555244162-803834f70033` |
 | about.jpg | `photo-1622021142947-da7dedc7c39a` |
-| showcase.jpg | `photo-1571162478581-ad3d0c1057ab` |
+| showcase.jpg / events.jpg | `photo-1571162478581-ad3d0c1057ab` |
 | food-alaminuti.jpg | `photo-1599921841143-819065a55cc6` |
 | food-grill.jpg | `photo-1555939594-58d7cb561ad1` |
 | food-salads.jpg | `photo-1769481614068-47cfb4d1f125` |
