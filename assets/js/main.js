@@ -136,6 +136,22 @@
     );
   }
 
+  /* The printed menu headlines one set lunch per day in a gold panel. Give it
+     its own emphasis here rather than burying it as a fourth ordinary list —
+     the combo names are long, so this lays out as name + price, not a dotted
+     leader row. */
+  function weeklyCombo(lang, combo) {
+    if (!combo) return "";
+    return (
+      '<div class="weekly-combo">' +
+      '<p class="weekly-group-title">' + t(lang, "weeklySection.combo") + "</p>" +
+      '<div class="weekly-combo-row">' +
+      '<span class="weekly-combo-name">' + (combo.name[lang] || combo.name.bg) + "</span>" +
+      '<span class="menu-row-price">' + formatPrice(combo.price) + "</span>" +
+      "</div></div>"
+    );
+  }
+
   function renderWeekPanel(lang) {
     var panel = document.getElementById("weeklyPanel");
     var w = window.WEEKLY_MENU;
@@ -148,7 +164,8 @@
       '<div class="weekly-bread"><p class="weekly-group-title">' + t(lang, "weeklySection.bread") + '</p>' +
       '<div class="menu-row"><div class="menu-row-label"><span class="menu-row-name">' +
       (bread.name[lang] || bread.name.bg) + '</span></div><span class="menu-row-dots" aria-hidden="true"></span>' +
-      '<span class="menu-row-price">' + formatPrice(bread.price) + "</span></div></div>";
+      '<span class="menu-row-price">' + formatPrice(bread.price) + "</span></div></div>" +
+      weeklyCombo(lang, day.combo);
   }
 
   /* ---------------------------- why-choose-us render (top 3 only) ---------------------------- */

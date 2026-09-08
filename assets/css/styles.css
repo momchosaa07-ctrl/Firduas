@@ -377,6 +377,25 @@ section { padding: var(--section-y) 0; position: relative; }
 .weekly-group-title { text-transform: uppercase; letter-spacing: .2em; font-size: 11.5px; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
 .weekly-bread { margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); }
 
+/* The set lunch is the headline offer on the printed card (gold panel there);
+   a tinted accent panel gives it the same weight without a new colour. */
+.weekly-combo {
+  margin-top: 28px; padding: 20px clamp(16px, 3vw, 24px);
+  background: rgba(47, 180, 105, .07);
+  border: 1px solid rgba(47, 180, 105, .22);
+  border-radius: var(--radius-card);
+}
+.weekly-combo .weekly-group-title { margin-bottom: 10px; }
+.weekly-combo-row {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 6px 18px;
+}
+.weekly-combo-name {
+  flex: 1 1 220px; min-width: 0;
+  font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.5;
+}
+.weekly-combo .menu-row-price { font-size: 17px; }
+
 /* ---------------------------------- Parties & events ---------------------------------- */
 .events { background: var(--black); }
 .events-inner { display: grid; grid-template-columns: 1fr; gap: 44px; align-items: center; }
